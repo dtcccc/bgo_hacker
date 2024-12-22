@@ -15,7 +15,7 @@ def replace_svt_info(battle_info):
                     dropflag=True
 
     for svt in svtlist:
-        if svt["userId"]==0 and svt.get("isFollower",False)==False:
+        if svt.get("userId",0)==0 and svt.get("isFollower",False)==False:
             svt["atk"]=1
             svt["hp"]=2 if dropflag else 1
         elif "parentSvtId" not in svt:
